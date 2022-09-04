@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "8a082027-a776-4f69-b868-89a5c818db98",
+		"name": "to-do APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Prajwal\",\n    \"email\": \"prajwalarora4@gmail.com\",\n    \"password\": \"Hello@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/signup",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"prajwalarora4@gmail.com\",\n    \"password\": \"Hello@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE0YmVkYjU0YzM4ZjVmYWQzMjVhN2YiLCJpYXQiOjE2NjIzMDQwOTR9.mbON0-_E_N-1iDfu47YN4LOFyMS2arkCC1Wid1s8HkE",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/users/logout",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE0YmVkYjU0YzM4ZjVmYWQzMjVhN2YiLCJpYXQiOjE2NjIzMDQ1NDN9.bHXE0cWLGpCUznftuleWL69tG73S9zTayE82MLXiOvY",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"get groceries from the market\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/tasks/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update task",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE0YmVkYjU0YzM4ZjVmYWQzMjVhN2YiLCJpYXQiOjE2NjIzMDQ1NDN9.bHXE0cWLGpCUznftuleWL69tG73S9zTayE82MLXiOvY",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"completed\": \"true\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/tasks/6314eb1570f2fd605e5ec93c",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"6314eb1570f2fd605e5ec93c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE0YmVkYjU0YzM4ZjVmYWQzMjVhN2YiLCJpYXQiOjE2NjIzMDQ1NDN9.bHXE0cWLGpCUznftuleWL69tG73S9zTayE82MLXiOvY",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/tasks/6314eaf270f2fd605e5ec939",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"6314eaf270f2fd605e5ec939"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all tasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE0YmVkYjU0YzM4ZjVmYWQzMjVhN2YiLCJpYXQiOjE2NjIzMDQ1NDN9.bHXE0cWLGpCUznftuleWL69tG73S9zTayE82MLXiOvY",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/tasks?sortBy=createdAt:desc",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "createdAt:desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get completed tasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE0YmVkYjU0YzM4ZjVmYWQzMjVhN2YiLCJpYXQiOjE2NjIzMDQ1NDN9.bHXE0cWLGpCUznftuleWL69tG73S9zTayE82MLXiOvY",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/tasks?completed=true",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "completed",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE0YmVkYjU0YzM4ZjVmYWQzMjVhN2YiLCJpYXQiOjE2NjIzMDQ1NDN9.bHXE0cWLGpCUznftuleWL69tG73S9zTayE82MLXiOvY",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Prajwal Arora\",\n    \"age\": 24\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE0YmVkYjU0YzM4ZjVmYWQzMjVhN2YiLCJpYXQiOjE2NjIzMDQ1NDN9.bHXE0cWLGpCUznftuleWL69tG73S9zTayE82MLXiOvY",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
